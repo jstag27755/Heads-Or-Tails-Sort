@@ -1,5 +1,4 @@
 import random
-global total
 total=0
 def h_or_t():
     num = random.randint(0, 1)
@@ -10,11 +9,13 @@ def h_or_t():
 
 def sort(arr,total):
     while True:
+        #global total
         total+=1
         sorted_ = True
         x = 0
         while x < len(arr) - 1:
             currentval = arr[x]
+            currentval2 = arr[x-1]
             htval = h_or_t()
             
             if htval == "heads":
@@ -27,20 +28,21 @@ def sort(arr,total):
                 if x > 0:
                     arr.pop(x - 1)
                     y = x
-                    arr.insert(y, currentval)
+                    arr.insert(y, currentval2)
                     print(arr)
             
-            if x + 1 < len(arr) and arr[x] > arr[x + 1]:
-                sorted_ = False
-                print(arr)
-                break
+            for i in range (len(arr)-1):
+                if arr[i] > arr[i + 1]:
+                    sorted_ = False
+                    print(arr)
+                    break
                 
             x += 1
             
         if sorted_:
             print("Sorted result:", arr)
-            break
+            return total
 #Change this to your own number
-num = []
-sort(num,total)
+num = [5,2]
+total=sort(num,total)
 print(total)
