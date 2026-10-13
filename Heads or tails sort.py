@@ -45,4 +45,4 @@ def sort(arr,total):
 #Change this to your own number
 num = [5,2]
 total=sort(num,total)
-print(total)
+print("Total Moves were:",total)
