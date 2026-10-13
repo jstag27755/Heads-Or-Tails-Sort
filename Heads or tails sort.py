@@ -30,19 +30,20 @@ def sort(arr,total):
                     y = x
                     arr.insert(y, currentval2)
                     print(arr)
-            
-            for i in range (len(arr)-1):
-                if arr[i] > arr[i + 1]:
-                    sorted_ = False
-                    print(arr)
-                    break
-                
             x += 1
+            
+        for i in range (len(arr)-1):
+            if arr[i] > arr[i + 1]:
+                sorted_ = False
+                print(arr)
+                break
+                
+            
             
         if sorted_:
             print("Sorted result:", arr)
             return total
 #Change this to your own number
-num = [5,2]
+num = [5,2,3]
 total=sort(num,total)
-print("Total Moves were:",total)
+print(total)
