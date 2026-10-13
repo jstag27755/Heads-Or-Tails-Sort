@@ -40,7 +40,7 @@ def sort(arr,total):
         if sorted_:
             print("Sorted result:", arr)
             break
-
-num = [8,3,6,1,10,9,4,2,5,7]
+#Change this to your own number
+num = []
 sort(num,total)
 print(total)
